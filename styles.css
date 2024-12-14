@@ -125,13 +125,16 @@ body {
 
 @media (max-width: 768px) {
     .top-bar {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
         padding: 15px;
     }
 
     .top-bar button {
-        width: 100%;
-        margin: 5px 0;
+        width: 48%; /* Make buttons take up 48% of the screen width */
+        margin-bottom: 10px;
+        font-size: 14px;
     }
 
     .main {
