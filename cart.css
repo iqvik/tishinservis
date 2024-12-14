@@ -6,7 +6,7 @@ body {
 
 .top-bar {
     display: flex;
-    justify-content: space-between; /* Change to space-between */
+    justify-content: space-evenly;  /* Adjusts buttons to be spaced evenly */
     align-items: center;
     background-color: #343a40;
     color: white;
@@ -72,7 +72,7 @@ h1 {
     width: 120px;
     height: 120px;
     object-fit: cover;
-    border-radius: 50%; /* Ensures circular images */
+    border-radius: 50%;
     border: 2px solid #ddd;
 }
 
@@ -112,8 +112,8 @@ h1 {
     cursor: pointer;
     font-size: 16px;
     transition: background 0.3s ease;
-    margin-right: 20px; /* Push buttons slightly right */
-    margin-left: auto; /* Align buttons to the far right */
+    margin-right: 20px;
+    margin-left: auto;
     display: inline-block;
 }
 
@@ -147,14 +147,16 @@ h1 {
     background-color: #218838;
 }
 
+/* Media Query for Mobile */
 @media (max-width: 600px) {
     .top-bar {
-        flex-direction: column;
+        flex-direction: row;  /* Ensure the buttons stay in a row on small screens */
+        justify-content: space-evenly; /* Evenly space the buttons */
     }
 
     .top-bar button {
-        margin: 5px 0;
-        padding: 8px 16px;
+        margin: 5px;  /* Space between buttons */
+        padding: 8px 16px;  /* Adjust padding for smaller screen */
         font-size: 14px;
     }
 
