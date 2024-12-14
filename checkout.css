@@ -158,20 +158,66 @@ input:focus {
     background: linear-gradient(90deg, #218838, #1c7430);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .top-bar {
-        flex-direction: row;  /* Make sure the buttons are displayed in a row on small screens */
-        justify-content: space-evenly; /* Evenly space the buttons */
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
     }
 
     .top-bar button {
-        margin: 5px;  /* Add margin between the buttons */
         padding: 8px 16px;
         font-size: 14px;
+        margin: 0 5px;
     }
 
-    .checkout-container {
-        margin: 80px auto 20px;
-        width: 90%;
+    .main {
+        margin-top: 80px; /* Reduced margin-top further */
+        padding: 0 20px;
+    }
+
+    .section {
+        padding: 10px;
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product img {
+        height: 150px;
+    }
+
+    .product button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        margin-top: 100px; /* Reduced margin-top further */
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product img {
+        height: 120px;
+    }
+
+    .top-bar button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .product button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .section h2 {
+        font-size: 20px;
     }
 }
