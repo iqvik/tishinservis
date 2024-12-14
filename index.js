@@ -11,3 +11,11 @@ function addToCart(name, image, price) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+function changeText(button) {
+    button.innerText = "Added to cart"
+    setTimeout(() => {
+        button.innerText = "Add to cart";
+    }, 1250);
+    
+}
