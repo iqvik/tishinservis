@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f8f9fa;
+    background-color: #F5F5DC;
     color: #333;
 }
 
@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #343a40;
+    background-color: #A3A95C;
     color: white;
     padding: 10px 0;
     width: 100%;
@@ -24,28 +24,20 @@ body {
 }
 
 .top-bar button {
-    background-color: #495057;
-    color: white;
+    background-color: #F1E6B2;
+    color: #7A3B3B;
     border: none;
+    font-weight: 650;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 .top-bar button:hover {
     background-color: #6c757d;
-}
-
-.top-bar button:last-child {
-    background-color: #007bff;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.top-bar button:last-child:hover {
-    background-color: #0056b3;
 }
 
 .main {
@@ -83,7 +75,7 @@ body {
     border: 1px solid #dee2e6;
     border-radius: 8px;
     padding: 20px;
-    background-color: white;
+    background-color: #FAFAFA;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -109,18 +101,19 @@ body {
 }
 
 .product button {
-    background-color: #007bff;
+    background-color: #FF6F61;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 .product button:hover {
-    background-color: #0056b3;
+    background-color: #D85D52;
 }
 
 @media (max-width: 768px) {
@@ -137,7 +130,7 @@ body {
     }
 
     .main {
-        margin-top: 80px; /* Reduced margin-top further */
+        margin-top: 80px; 
         padding: 0 20px;
     }
 
