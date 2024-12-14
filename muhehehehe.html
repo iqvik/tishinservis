@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f4f4f9;
+        }
+        .checkout-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1, button {
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <button id="submit-order">Submit Order</button>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        // Submit order
+        document.getElementById('submit-order').addEventListener('click', () => {
+            const order = {
+                recipient: "John Doe",
+                address: "123 Main St",
+                items: [
+                    { name: "Item 1", quantity: 2 },
+                    { name: "Item 2", quantity: 1 }
+                ]
+            };
+
+            db.ref('orders').push(order).then(() => {
+                alert('Order submitted successfully!');
+            }).catch(error => {
+                console.error('Error submitting order:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!-- Order Display Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .order {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order List</h1>
+    <div id="order-container"></div>
+
+    <script>
+        // Firebase configuration (same as above)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        // Listen for orders
+        const orderContainer = document.getElementById('order-container');
+
+        db.ref('orders').on('child_added', snapshot => {
+            const order = snapshot.val();
+            const orderDiv = document.createElement('div');
+            orderDiv.className = 'order';
+            orderDiv.innerHTML = `
+                <p><strong>Recipient:</strong> ${order.recipient}</p>
+                <p><strong>Address:</strong> ${order.address}</p>
+                <p><strong>Items:</strong></p>
+                <ul>
+                    ${order.items.map(item => `<li>${item.name} - Quantity: ${item.quantity}</li>`).join('')}
+                </ul>
+            `;
+            orderContainer.appendChild(orderDiv);
+        });
+    </script>
+</body>
+</html>
