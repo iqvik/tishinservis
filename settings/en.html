@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="settings/helper.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="settings.js"></script> 
+
+    <div class="top-bar">
+        <button onclick="location.href='/menu/en.html'"><span>Home</span> <i class="fa fa-home"></i></button>
+        <button><span>Settings</span> <i class="fa fa-info-circle"></i></button>
+        <button><span>Services</span> <i class="fa fa-cogs"></i></button>
+        <button onclick="location.href='/cart/en.html'"><span>Cart</span> <i class="fa fa-shopping-cart"></i></button>
+    </div>
+    
+
+    <div class="language-box">
+        <span class="language-text">Select Language</span>
+        <select class="language-select" onchange="storeLanguagePreferenceAndRedirect(this)">
+            <option value="en">English</option>
+            <option value="ru">Russian</option>
+        </select>
+    </div>
+    
+    
+
+
+    
+</body>
+</html>
