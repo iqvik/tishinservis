@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tishin restaurant</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    </head>
 <body>
-    <button onclick="location.href='/menu/en.html'"><span>Home</span> <i class="fa fa-home"></i></button>
+    <script src="index.js"></script> 
+
+    <div class="top-bar">
+        <button onclick="location.href=''"><span>Home</span></button>
+        <button onclick="location.href='settings-en.html'"><span>Settings</span></button>
+        <button><span>Services</span></button>
+        <button onclick="location.href='cart-en.html'"><span>Cart</span></button>
+    </div>    
+
+    <div class="main">
+        <div class="section">
+            <h2>Burgers</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="/burger-1.png" alt="Product 1">
+                    <h3>Crunchy Cutlet</h3>
+                    <p>Price: €2.79</p>
+                    <button data-name="Crunchy Cutlet" onclick="addToCart('Crunchy Cutlet', '/burger-1.png', 2.79); changeText(this)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="/burger-2.png" alt="Product 2">
+                    <h3>Cheeseburger</h3>
+                    <p>Price: €3.50</p>
+                    <button data-name="Cheeseburger" onclick="addToCart('Cheeseburger', '/burger-2.png', 3.50); changeText(this)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="/burger-3.png" alt="Product 3">
+                    <h3>Nature Burger</h3>
+                    <p>Price: €4.00</p>
+                    <button data-name="Nature Burger" onclick="addToCart('Nature Burger', '/burger-3.png', 4.00); changeText(this)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="/burger-4.png" alt="Product 4">
+                    <h3>Monsieur Burger</h3>
+                    <p>Price: €4.50</p>
+                    <button data-name="Monsieur Burger" onclick="addToCart('Monsieur Burger', '/burger-4.png', 4.50); changeText(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Pizzas</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="/pizza-1.png" alt="Product 5">
+                    <h3>Margherita</h3>
+                    <p>Price: €6.50</p>
+                    <button data-name="Margherita" onclick="addToCart('Margherita', '/pizza-1.png', 6.50); changeText(this)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="/pizza-4.png" alt="Product 8">
+                    <h3>Three Cheese</h3>
+                    <p>Price: €4.50</p>
+                    <button data-name="Three Cheese" onclick="addToCart('Three Cheese', '/pizza-4.png', 4.50); changeText(this)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="/pizza-2.png" alt="Product 9">
+                    <h3>Veggie Delight</h3>
+                    <p>Price: €6.00</p>
+                    <button data-name="Veggie Delight" onclick="addToCart('Veggie Delight', '/pizza-2.png', 6.00); changeText(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
